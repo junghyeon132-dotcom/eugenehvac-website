@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시스템 에어컨 설치 & 종합 케어 전문</title>
+    <title>유진공조시스템</title>
     <!-- FontAwesome 아이콘 CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -44,7 +44,7 @@
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #0056b3;
+            color: #0b1f3a;
             text-decoration: none;
         }
 
@@ -62,7 +62,7 @@
         }
 
         .nav-links a:hover {
-            color: #0056b3;
+            color: #0b1f3a;
         }
 
         .menu-toggle {
@@ -71,105 +71,146 @@
             cursor: pointer;
         }
 
-        /* 메인 히어로 섹션 */
+        /* 히어로 섹션 */
         .hero {
             margin-top: 70px;
-            background: linear-gradient(135deg, #0056b3 0%, #0088cc 100%);
+            background: linear-gradient(135deg, #0b1f3a 0%, #1e40af 100%);
             color: white;
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 4rem 1rem;
         }
 
         .hero h1 {
             font-size: 2.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             word-break: keep-all;
         }
 
         .hero p {
             font-size: 1.1rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
             word-break: keep-all;
         }
 
-        /* 공통 컨테이너 */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
+        /* 문의하기 섹션 전체 레이아웃 (좌/우 2열 배치) */
+        .contact-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
 
-        /* 문의하기 섹션 카드 */
-        .contact-card {
-            background: #fff;
-            padding: 2.5rem;
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* 왼쪽 파란 상자 : 오른쪽 폼 비율 */
+            gap: 2rem;
+            align-items: start;
+        }
+
+        /* 왼쪽 정보 카드 */
+        .info-card {
+            background-color: #0b1f3a;
+            color: white;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-card h2 {
-            text-align: center;
-            color: #0056b3;
+        .info-card h2 {
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
         }
 
-        .contact-card p.subtitle {
-            text-align: center;
-            color: #666;
+        .info-subtitle {
+            font-size: 0.9rem;
+            color: #cbd5e1;
             margin-bottom: 2rem;
-            font-size: 0.95rem;
         }
 
-        /* 폼 스타일링 */
-        .form-group {
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
             margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: #38bdf8;
+            margin-top: 3px;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+            margin-top: 2px;
+        }
+
+        /* 오른쪽 폼 카드 */
+        .form-card {
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #444;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+            color: #1e293b;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
             border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
+            font-size: 0.95rem;
+            background-color: #f8fafc;
+            transition: border-color 0.2s, background-color 0.2s;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #0056b3;
+            border-color: #1e40af;
+            background-color: #fff;
         }
 
         .submit-btn {
             width: 100%;
             padding: 1rem;
-            background-color: #0056b3;
+            background-color: #1e40af;
             color: white;
             border: none;
             border-radius: 6px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
+            margin-top: 0.5rem;
             transition: background-color 0.3s;
         }
 
         .submit-btn:hover {
-            background-color: #003d80;
+            background-color: #1e3a8a;
         }
 
         .submit-btn:disabled {
-            background-color: #ccc;
+            background-color: #94a3b8;
             cursor: not-allowed;
         }
 
@@ -177,12 +218,13 @@
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #222;
-            color: #aaa;
+            background-color: #1e293b;
+            color: #94a3b8;
             font-size: 0.85rem;
+            margin-top: 3rem;
         }
 
-        /* 모바일 반응형 스타일 */
+        /* 모바일 반응형 (화면이 좁아지면 위아래로 배치) */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -209,7 +251,11 @@
                 padding: 0.5rem 0;
             }
 
-            .contact-card {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-card {
                 padding: 1.5rem;
             }
         }
@@ -220,7 +266,7 @@
     <!-- Header / Navigation -->
     <header>
         <nav>
-            <a href="#" class="logo">에어컨 케어 클리닉</a>
+            <a href="#" class="logo">유진공조시스템</a>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -237,61 +283,92 @@
         <p>신속하고 정확한 현장 견적 상담을 약속드립니다.</p>
     </section>
 
-    <!-- Contact Form Section -->
-    <main class="container" id="contact">
-        <div class="contact-card">
-            <h2>무료 견적 문의</h2>
-            <p class="subtitle">아래 정보를 입력해 주시면 확인 후 신속하게 연락드리겠습니다.</p>
+    <!-- Contact Section -->
+    <main class="contact-section" id="contact">
+        <div class="contact-container">
             
-            <!-- Formspree 전송 폼 -->
-            <form id="quoteForm" action="https://formspree.io/f/xbjnqwea" method="POST">
-                <div class="form-group">
-                    <label for="name">성함 / 상가 매장명</label>
-                    <input type="text" id="name" name="매장명" placeholder="예: 홍길동 (배곧 카페)" required>
+            <!-- 왼쪽: 유진공조시스템 정보 -->
+            <div class="info-card">
+                <h2>유진공조시스템 정보</h2>
+                <p class="info-subtitle">온라인 문의 및 카카오톡 상담을 통해 편하게 문의주세요.</p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>대표 전화번호</strong>
+                            <p>010-2035-3667</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>오시는 길 (주소지)</strong>
+                            <p>경기도 시흥시 배곧4로 32-19 110호</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>상담 가능 시간</strong>
+                            <p>평일 08:00 - 18:00 (토/일 예약 상담)</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="phone">연락처</label>
-                    <input type="tel" id="phone" name="연락처" placeholder="010-2035-3667" required>
-                </div>
+            <!-- 오른쪽: 견적 문의 폼 -->
+            <div class="form-card">
+                <form id="quoteForm" action="https://formspree.io/f/xbjnqwea" method="POST">
+                    <div class="form-group">
+                        <label for="name">성함 / 상가 매장명</label>
+                        <input type="text" id="name" name="매장명" placeholder="예: 박정현 (배곧 카페)" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="service-type">문의 유형</label>
-                    <select id="service-type" name="문의유형" required>
-                        <option value="">선택해 주세요</option>
-                        <option value="상가용 에어컨 설치/교체">상가용 에어컨 설치 / 교체</option>
-                        <option value="상가 에어컨 고압 분해 세척">상가 에어컨 고압 분해 세척</option>
-                        <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
-                        <option value="정기 종합 점검 및 세척">정기 종합 점검 및 세척</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" name="연락처" placeholder="010-2035-3667" required>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">문의 내용 (매장 종류, 평수, 에어컨 대수 등)</label>
-                    <textarea id="message" name="문의내용" rows="4" placeholder="예: 30평 식당 천장형 에어컨 2대 분해 세척 견적 문의드립니다."></textarea>
-                </div>
+                    <div class="form-group">
+                        <label for="service-type">문의 유형</label>
+                        <select id="service-type" name="문의유형" required>
+                            <option value="">선택해 주세요</option>
+                            <option value="상가용 에어컨 설치/교체">상가용 에어컨 설치 / 교체</option>
+                            <option value="상가 에어컨 고압 분해 세척">상가 에어컨 고압 분해 세척</option>
+                            <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
+                            <option value="정기 종합 점검 및 세척">정기 종합 점검 및 세척</option>
+                        </select>
+                    </div>
 
-                <button type="submit" class="submit-btn">
-                    <i class="fa-solid fa-paper-plane"></i> 견적 신청하기
-                </button>
-            </form>
+                    <div class="form-group">
+                        <label for="message">문의 내용 (매장 종류, 평수, 에어컨 대수 등)</label>
+                        <textarea id="message" name="문의내용" rows="4" placeholder="예: 30평 천장형 2대 설치 견적 문의드립니다."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> 견적 신청하기
+                    </button>
+                </form>
+            </div>
+
         </div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 에어컨 케어 클리닉. All rights reserved.</p>
+        <p>&copy; 2026 유진공조시스템. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // 모바일 네비게이션 메뉴 토글
+        // 모바일 메뉴 토글
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
         }
 
-        // Formspree 비동기 제출 처리
+        // Formspree 전송 처리
         const form = document.getElementById('quoteForm');
 
         form.addEventListener('submit', async function(event) {
@@ -314,7 +391,7 @@
                     alert("견적 문의가 성공적으로 접수되었습니다.\n확인 후 입력해주신 연락처로 바로 연락드리겠습니다.");
                     form.reset();
                 } else {
-                    alert("전송 중 오류가 발생했습니다. Formspree 설정을 확인해 주세요.");
+                    alert("전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
                 }
             } catch (error) {
                 alert("전송 중 오류가 발생했습니다. 인터넷 연결을 확인해 주세요.");
