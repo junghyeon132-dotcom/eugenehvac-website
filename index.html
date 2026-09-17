@@ -144,6 +144,7 @@
             display: flex;
             gap: 1rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -166,6 +167,17 @@
             background-color: #0369A1;
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3);
+        }
+
+        .btn-kakao-hero {
+            background-color: #FEE500;
+            color: #191919;
+        }
+
+        .btn-kakao-hero:hover {
+            background-color: #FADA0A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(254, 229, 0, 0.3);
         }
 
         .btn-outline {
@@ -587,8 +599,9 @@
             <h1>상가·매장 냉난방의 완벽한 솔루션<br>유진공조시스템</h1>
             <p>식당, 카페, 오피스, 매장 전문! 상가용 시스템에어컨 맞춤 설치부터 쾌적한 고압 분해 세척까지 완벽하게 책임집니다.</p>
             <div class="btn-group">
-                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> 온라인 무료 견적 신청</a>
-                <a href="#services" class="btn btn-outline"><i class="fa-solid fa-list-check"></i> 주요 서비스 확인</a>
+                <!-- ★ TODO: 오픈채팅 URL 입력 -->
+                <a href="https://open.kakao.com/o/YOUR_OPEN_CHAT_ID" target="_blank" class="btn btn-kakao-hero"><i class="fa-solid fa-comment"></i> 카카오톡 즉시 상담</a>
+                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> 온라인 견적 신청</a>
             </div>
         </div>
     </section>
@@ -692,7 +705,7 @@
             <div class="contact-info">
                 <div>
                     <h3>유진공조시스템 정보</h3>
-                    <p class="desc">온라인 문의 및 카카오톡 상담을 통해 편하게 문의주세요.</p>
+                    <p class="desc">온라인 문의 및 카카오톡 오픈채팅 상담을 통해 편하게 문의주세요.</p>
                 </div>
                 <div class="info-details">
                     <div class="info-item">
@@ -720,30 +733,31 @@
             </div>
 
             <div class="contact-form">
-                <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+                <!-- ★ TODO: 아래 action URL의 YOUR_FORMSPREE_ID를 본인의 Formspree ID로 변경하세요. -->
+                <form id="quoteForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
                         <label for="name">성함 / 상가 매장명</label>
-                        <input type="text" id="name" placeholder="예: 홍길동 (배곧 카페)" required>
+                        <input type="text" id="name" name="성함 및 매장명" placeholder="예: 홍길동 (배곧 카페)" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">연락처</label>
-                        <input type="tel" id="phone" placeholder="010-2035-3667" required>
+                        <input type="tel" id="phone" name="연락처" placeholder="010-2035-3667" required>
                     </div>
                     <div class="form-group">
-                        <label for="service-type">문의 유형</label>
-                        <select id="service-type" required>
+                        <label for="service_type">문의 유형</label>
+                        <select id="service_type" name="문의 유형" required>
                             <option value="">선택해 주세요</option>
-                            <option value="system-install">상가용 시스템에어컨 설치 / 교체</option>
-                            <option value="system-clean">상가 시스템에어컨 고압 분해 세척</option>
-                            <option value="duct">덕트 및 환기 공사</option>
-                            <option value="maintenance">정기 종합 점검 및 세척</option>
+                            <option value="상가용 시스템에어컨 설치/교체">상가용 시스템에어컨 설치 / 교체</option>
+                            <option value="상가 시스템에어컨 고압 분해 세척">상가 시스템에어컨 고압 분해 세척</option>
+                            <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
+                            <option value="정기 종합 점검 및 세척">정기 종합 점검 및 세척</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">문의 내용 (매장 종류, 평수, 에어컨 대수 등)</label>
-                        <textarea id="message" rows="4" placeholder="예: 30평 식당 천장형 시스템에어컨 2대 분해 세척 견적 문의드립니다."></textarea>
+                        <textarea id="message" name="문의 내용" rows="4" placeholder="예: 30평 식당 천장형 시스템에어컨 2대 분해 세척 견적 문의드립니다."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> 견적 신청하기</button>
+                    <button type="submit" class="submit-btn" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> 견적 신청하기</button>
                 </form>
             </div>
         </div>
@@ -751,7 +765,8 @@
 
     <!-- 플로팅 카카오톡 상담 버튼 -->
     <div class="quick-actions">
-        <a href="https://open.kakao.com/" target="_blank" class="quick-btn btn-kakao" title="카카오톡 실시간 상담">
+        <!-- ★ TODO: 오픈채팅 URL 입력 -->
+        <a href="https://open.kakao.com/o/YOUR_OPEN_CHAT_ID" target="_blank" class="quick-btn btn-kakao" title="카카오톡 1:1 상담">
             <i class="fa-solid fa-comment"></i>
         </a>
     </div>
@@ -763,17 +778,42 @@
 
     <!-- 스크립트 -->
     <script>
-        // 모바일 메뉴 토글
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
         }
 
-        // 견적 문의 제출 알림 처리
-        function handleFormSubmit(event) {
+        // Formspree 비동기(AJAX) 전송 처리
+        async function handleFormSubmit(event) {
             event.preventDefault();
-            alert("견적 문의가 성공적으로 접수되었습니다.\n확인 후 작성해주신 연락처로 안내해 드리겠습니다.");
-            document.getElementById('quoteForm').reset();
+            const form = event.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const data = new FormData(form);
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "전송 중...";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert("견적 문의가 성공적으로 접수되었습니다!\n확인 후 작성해주신 연락처로 신속히 답변드리겠습니다.");
+                    form.reset();
+                } else {
+                    alert("전송 중 오류가 발생했습니다. 우측 하단의 카카오톡 상담을 이용해주세요.");
+                }
+            } catch (error) {
+                alert("전송 중 오류가 발생했습니다. 우측 하단의 카카오톡 상담을 이용해주세요.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 견적 신청하기';
+            }
         }
     </script>
 </body>
