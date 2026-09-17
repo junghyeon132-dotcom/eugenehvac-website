@@ -2,163 +2,313 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- 화면이 축소되어 보이지 않도록 모바일/PC 배율을 정상으로 잡아주는 태그 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>유진공조시스템</title>
-    <!-- FontAwesome 아이콘 CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유진공조시스템 - 시스템 에어컨 & 공조 전문</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* 기본 스타일 초기화 */
+        /* 초기 버전의 깔끔하고 화사한 스타일리시 변수 */
+        :root {
+            --primary-color: #0284C7;
+            --primary-dark: #0369A1;
+            --secondary-color: #0F172A;
+            --bg-light: #F8FAFC;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            color: #333;
+            color: var(--text-main);
+            background-color: var(--white);
             line-height: 1.6;
-            background-color: #f8f9fa;
+            word-break: keep-all;
         }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
         /* 네비게이션 바 */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            width: 100%;
             top: 0;
             left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
-        nav {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
         }
 
         .logo {
             font-size: 1.4rem;
-            font-weight: bold;
-            color: #0b1f3a;
-            text-decoration: none;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
+        .logo i { color: var(--primary-color); }
 
         .nav-links {
             display: flex;
-            list-style: none;
             gap: 2rem;
         }
 
         .nav-links a {
-            text-decoration: none;
-            color: #555;
+            color: var(--text-main);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: #0b1f3a;
+            color: var(--primary-color);
         }
 
-        .menu-toggle {
+        .mobile-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--secondary-color);
         }
 
-        /* 히어로 섹션 */
+        /* 초기 히어로 섹션 스타일 (화사함) */
         .hero {
-            margin-top: 70px;
-            background: linear-gradient(135deg, #0b1f3a 0%, #1e40af 100%);
-            color: white;
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), 
+                        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 4rem 1rem;
+            color: var(--white);
+            padding: 0 1.5rem;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-            word-break: keep-all;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            word-break: keep-all;
+            font-size: 1.2rem;
+            color: #E2E8F0;
+            margin-bottom: 2rem;
+            font-weight: 300;
         }
 
-        /* 문의하기 섹션 레이아웃 */
-        .contact-section {
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 공통 섹션 */
+        section {
+            padding: 5rem 2rem;
             max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-            width: 100%;
+            margin: 0 auto;
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 2rem;
-            align-items: start;
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
         }
 
-        /* 왼쪽 정보 카드 */
-        .info-card {
-            background-color: #0b1f3a;
-            color: white;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-card h2 {
-            font-size: 1.6rem;
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
             margin-bottom: 0.5rem;
         }
 
-        .info-subtitle {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
+        .section-title p {
+            color: var(--text-muted);
         }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+        /* 초기 서비스 카드 디자인 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .info-item i {
-            font-size: 1.2rem;
-            color: #38bdf8;
-            margin-top: 3px;
-        }
-
-        .info-item strong {
-            display: block;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        .info-item p {
-            font-size: 1rem;
-            margin-top: 2px;
-        }
-
-        /* 오른쪽 폼 카드 */
-        .form-card {
-            background: #ffffff;
+        .service-card {
+            background: var(--white);
             padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #F1F5F9;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: #E0F2FE;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 초기 시공사례 갤러리 */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            height: 240px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+        }
+
+        .gallery-info h4 { font-size: 1rem; }
+
+        /* 문의 박스 & 업체 정보 카드가 조화로운 레이아웃 */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background-color: var(--bg-light);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .contact-info-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .info-card i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
         }
 
         .form-group {
@@ -167,239 +317,277 @@
 
         .form-group label {
             display: block;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            font-size: 0.95rem;
-            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        .form-group input,
-        .form-group select,
+        .form-group input, 
+        .form-group select, 
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            padding: 0.8rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
             font-size: 0.95rem;
-            background-color: #f8fafc;
-            transition: border-color 0.2s, background-color 0.2s;
+            outline: none;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
+        .form-group input:focus, 
+        .form-group select:focus, 
         .form-group textarea:focus {
-            outline: none;
-            border-color: #1e40af;
-            background-color: #fff;
+            border-color: var(--primary-color);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 1rem;
-            background-color: #1e40af;
-            color: white;
+            padding: 0.9rem;
+            background-color: var(--primary-color);
+            color: var(--white);
             border: none;
-            border-radius: 6px;
-            font-size: 1.05rem;
-            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            margin-top: 0.5rem;
-            transition: background-color 0.3s;
+            transition: var(--transition);
         }
 
         .submit-btn:hover {
-            background-color: #1e3a8a;
+            background-color: var(--primary-dark);
         }
 
-        .submit-btn:disabled {
-            background-color: #94a3b8;
-            cursor: not-allowed;
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
         }
 
-        /* 푸터 */
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-call { background-color: #22C55E; }
+        .btn-kakao-talk { background-color: #FEE500; color: #000; }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
-            background-color: #1e293b;
-            color: #94a3b8;
-            font-size: 0.85rem;
-            margin-top: 3rem;
+            background-color: var(--secondary-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        /* 모바일 반응형 */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #fff;
-                padding: 1rem 0;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                text-align: center;
-                padding: 0.5rem 0;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .form-card {
-                padding: 1.5rem;
-            }
+            .contact-container { grid-template-columns: 1fr; padding: 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- 상단 네비게이션 -->
     <header>
-        <nav>
-            <a href="#" class="logo">유진공조시스템</a>
-            <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-snowflake"></i> 유진공조시스템
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">주요서비스</a></li>
+                <li><a href="#gallery">시공사례</a></li>
+                <li><a href="#contact">견적문의</a></li>
+            </ul>
+            <div class="mobile-toggle" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero">홈</a></li>
-                <li><a href="#contact">견적 문의</a></li>
-            </ul>
-        </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <h1>상가 & 업소용 시스템 에어컨<br>설치부터 완전분해 세척까지</h1>
-        <p>신속하고 정확한 현장 견적 상담을 약속드립니다.</p>
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>시스템 에어컨 & 공조 설비<br>완벽 시공 전문</h1>
+            <p>상가, 오피스, 주거 공간을 위한 최적의 맞춤형 공조 솔루션을 제공합니다.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> 무료 견적 신청</a>
+                <a href="tel:010-2035-3667" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 전화 상담</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <main class="contact-section" id="contact">
+    <!-- 주요 서비스 -->
+    <section id="services">
+        <div class="section-title">
+            <h2>OUR SERVICES</h2>
+            <p>유진공조시스템이 제공하는 전문 서비스입니다.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
+                <h3>시스템 에어컨 설치/교체</h3>
+                <p>상가, 사무실, 주택 천장형 및 스탠드형 에어컨 맞춤 시공</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-wind"></i></div>
+                <h3>덕트 및 환기 공사</h3>
+                <p>식당, 상가 주방 및 사업장 환기/배기 덕트 전문 공사</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                <h3>고압 분해 세척 & 점검</h3>
+                <p>냉매 점검, 고압 분해 세척을 통한 장비 수명 연장 및 점검</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 시공사례 -->
+    <section id="gallery">
+        <div class="section-title">
+            <h2>PORTFOLIO</h2>
+            <p>유진공조시스템의 실제 현장 시공 사례입니다.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1590247819200-07204f14a60b?auto=format&fit=crop&w=600&q=80" alt="상가 에어컨 설치">
+                <div class="gallery-info">
+                    <h4>상가 천장형 에어컨 시공</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="주방 덕트 공사">
+                <div class="gallery-info">
+                    <h4>식당 주방 배기 덕트 라인</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="고압 분해 세척">
+                <div class="gallery-info">
+                    <h4>에어컨 완전분해 고압 세척</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 견적 문의 및 업체 정보 -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>CONTACT US</h2>
+            <p>문의사항을 남겨주시면 빠르게 상담을 도와드립니다.</p>
+        </div>
         <div class="contact-container">
             
-            <!-- 왼쪽: 유진공조시스템 정보 -->
-            <div class="info-card">
-                <h2>유진공조시스템 정보</h2>
-                <p class="info-subtitle">온라인 문의 및 카카오톡 상담을 통해 편하게 문의주세요.</p>
-                
-                <div class="info-list">
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <strong>대표 전화번호</strong>
-                            <p>010-2035-3667</p>
-                        </div>
+            <!-- 업체 정보 카드 -->
+            <div class="contact-info-box">
+                <div class="info-card">
+                    <i class="fa-solid fa-building"></i>
+                    <div>
+                        <small style="color:var(--text-muted);">업체명</small>
+                        <h4 style="color:var(--secondary-color);">유진공조시스템</h4>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>오시는 길 (주소지)</strong>
-                            <p>경기도 시흥시 배곧4로 32-19 110호</p>
-                        </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <small style="color:var(--text-muted);">대표 문의</small>
+                        <h4 style="color:var(--secondary-color);">010-2035-3667</h4>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <strong>상담 가능 시간</strong>
-                            <p>평일 08:00 - 18:00 (토/일 예약 상담)</p>
-                        </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <small style="color:var(--text-muted);">오시는 길</small>
+                        <h4 style="color:var(--secondary-color); font-size: 0.95rem;">경기도 시흥시 배곧4로 32-19 110호</h4>
                     </div>
                 </div>
             </div>
 
-            <!-- 오른쪽: 견적 문의 폼 -->
-            <div class="form-card">
+            <!-- Formspree 견적 폼 -->
+            <div class="contact-form">
                 <form id="quoteForm" action="https://formspree.io/f/xbjnqwea" method="POST">
                     <div class="form-group">
-                        <label for="name">성함 / 상가 매장명</label>
-                        <input type="text" id="name" name="매장명" placeholder="예: 박정현 (배곧 카페)" required>
+                        <label for="name">성함 / 매장명</label>
+                        <input type="text" id="name" name="성함_매장명" placeholder="홍길동" required>
                     </div>
-
                     <div class="form-group">
                         <label for="phone">연락처</label>
                         <input type="tel" id="phone" name="연락처" placeholder="010-2035-3667" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="service-type">문의 유형</label>
-                        <select id="service-type" name="문의유형" required>
-                            <option value="">선택해 주세요</option>
-                            <option value="상가용 에어컨 설치/교체">상가용 에어컨 설치 / 교체</option>
-                            <option value="상가 에어컨 고압 분해 세척">상가 에어컨 고압 분해 세척</option>
-                            <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
-                            <option value="정기 종합 점검 및 세척">정기 종합 점검 및 세척</option>
+                        <label for="service">문의 유형</label>
+                        <select id="service" name="문의유형" required>
+                            <option value="">선택해주세요</option>
+                            <option value="에어컨 설치/교체">에어컨 설치 / 교체</option>
+                            <option value="에어컨 분해 세척">에어컨 분해 세척</option>
+                            <option value="덕트/환기 공사">덕트 / 환기 공사</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="message">문의 내용 (매장 종류, 평수, 에어컨 대수 등)</label>
-                        <textarea id="message" name="문의내용" rows="4" placeholder="예: 30평 천장형 2대 설치 견적 문의드립니다."></textarea>
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="문의내용" rows="3" placeholder="내용을 입력해주세요."></textarea>
                     </div>
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fa-solid fa-paper-plane"></i> 견적 신청하기
-                    </button>
+                    <button type="submit" class="submit-btn">견적 신청하기</button>
                 </form>
             </div>
 
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
+    <!-- 플로팅 버튼 -->
+    <div class="floating-btns">
+        <a href="https://open.kakao.com/" target="_blank" class="float-btn btn-kakao-talk"><i class="fa-solid fa-comment"></i></a>
+        <a href="tel:010-2035-3667" class="float-btn btn-call"><i class="fa-solid fa-phone"></i></a>
+    </div>
+
+    <!-- 푸터 -->
     <footer>
-        <p>&copy; 2026 유진공조시스템. All rights reserved.</p>
+        <p>&copy; 2026 유진공조시스템. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // 모바일 메뉴 토글
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            const nav = document.getElementById('navLinks');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Formspree 전송 처리
         const form = document.getElementById('quoteForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('.submit-btn');
+            btn.textContent = '전송 중...';
+            btn.disabled = true;
 
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault();
-            
-            const submitBtn = form.querySelector('.submit-btn');
-            submitBtn.textContent = '전송 중...';
-            submitBtn.disabled = true;
-
-            const data = new FormData(event.target);
-            
             try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
                     headers: { 'Accept': 'application/json' }
                 });
-                
                 if (response.ok) {
-                    alert("견적 문의가 성공적으로 접수되었습니다.\n확인 후 입력해주신 연락처로 바로 연락드리겠습니다.");
+                    alert('견적 문의가 정상 접수되었습니다.');
                     form.reset();
                 } else {
-                    alert("전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+                    alert('전송 실패: Formspree 이메일 인증을 확인해주세요.');
                 }
-            } catch (error) {
-                alert("전송 중 오류가 발생했습니다. 인터넷 연결을 확인해 주세요.");
+            } catch (err) {
+                alert('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
             } finally {
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 견적 신청하기';
-                submitBtn.disabled = false;
+                btn.textContent = '견적 신청하기';
+                btn.disabled = false;
             }
         });
     </script>
