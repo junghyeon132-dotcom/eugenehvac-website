@@ -1,820 +1,222 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>상가용 시스템에어컨 전문 설치 & 고압 분해 세척 - 유진공조시스템</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>유진공조시스템 | 시흥 배곧 상가 시스템에어컨 설치 & 분해세척</title>
     
+    <!-- SEO 및 기본 메타 태그 -->
+    <meta name="description" content="시흥, 배곧, 안산, 인천 상가/매장/식당/카페 시스템에어컨 전문 설치, 고압 분해 세척, 덕트 공사 전문 유진공조시스템. 무료 견적 상담">
+    <meta name="keywords" content="시흥 시스템에어컨, 배곧 시스템에어컨, 상가 에어컨 설치, 시스템에어컨 분해세척, 식당 에어컨 청소, 유진공조시스템">
+
+    <!-- Open Graph 공유 카드 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="유진공조시스템 - 상가 시스템에어컨 설치 & 정밀 세척">
+    <meta property="og:description" content="상가·매장 냉난방 완벽 솔루션! 시스템에어컨 맞춤 시공 및 고압 완전분해 세척 전문">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://junghyeon132-dotcom.github.io/eugenehvac-website/">
+
+    <!-- FontAwesome 아이콘 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* 기본 변수 및 디자인 시스템 */
-        :root {
-            --navy-dark: #0A192F;
-            --navy-main: #1E3A8A;
-            --blue-accent: #0284C7;
-            --blue-light: #E0F2FE;
-            --bg-light: #F8FAFC;
-            --text-dark: #1E293B;
-            --text-gray: #64748B;
-            --white: #FFFFFF;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Noto Sans KR', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.6;
-            word-break: keep-all;
-        }
-
+        /* 기본 스타일 초기화 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; }
+        body { line-height: 1.6; color: #333; background-color: #f8f9fa; }
         a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
 
-        /* Navigation Bar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(10, 25, 47, 0.96);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.1rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .logo i { color: #38BDF8; }
-
-        .nav-links {
-            display: flex;
-            gap: 2.2rem;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: #38BDF8;
-        }
-
-        .mobile-toggle {
-            display: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            min-height: 650px;
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.92), rgba(30, 58, 138, 0.85)), 
-                        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 1.5rem;
-            margin-top: 60px;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.15);
-            color: #38BDF8;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #94A3B8;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.9rem 2.2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--blue-accent);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: #0369A1;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3);
-        }
-
-        .btn-kakao-hero {
-            background-color: #FEE500;
-            color: #191919;
-        }
-
-        .btn-kakao-hero:hover {
-            background-color: #FADA0A;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(254, 229, 0, 0.3);
-        }
-
-        .btn-outline {
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: var(--white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-            color: var(--navy-dark);
-            border-color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Common Section Layout */
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            color: var(--navy-dark);
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-
-        .section-header p {
-            color: var(--text-gray);
-            font-size: 1.05rem;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--navy-dark);
-            margin-bottom: 1.2rem;
-            line-height: 1.4;
-        }
-
-        .about-text p {
-            color: var(--text-gray);
-            margin-bottom: 1.8rem;
-            font-size: 1.02rem;
-        }
-
-        .highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-
-        .highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 600;
-            color: var(--navy-dark);
-        }
-
-        .highlight-item i {
-            color: var(--blue-accent);
-            font-size: 1.2rem;
-        }
-
-        /* Services Section */
-        .services-wrapper {
-            background-color: var(--bg-light);
-            max-width: 100%;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            transition: var(--transition);
-            border: 1px solid #E2E8F0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--navy-main);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
-        }
-
-        .service-card:hover::before {
-            background: var(--blue-accent);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--blue-light);
-            color: var(--blue-accent);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.8rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: var(--navy-dark);
-        }
-
-        .service-card p {
-            color: var(--text-gray);
-            font-size: 0.98rem;
-        }
-
-        /* Gallery Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            height: 260px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.5rem;
-            color: var(--white);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay h4 {
-            font-size: 1.15rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .gallery-overlay p {
-            font-size: 0.88rem;
-            color: #94A3B8;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            background-color: var(--navy-dark);
-            color: var(--white);
-            padding: 3.5rem 2.5rem;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .contact-info p.desc {
-            color: #94A3B8;
-            margin-bottom: 2.5rem;
-        }
-
-        .info-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.2rem;
-        }
-
-        .info-item i {
-            font-size: 1.3rem;
-            color: #38BDF8;
-            margin-top: 0.2rem;
-        }
-
-        .info-item strong {
-            display: block;
-            font-size: 0.9rem;
-            color: #94A3B8;
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-form {
-            background-color: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        .form-group {
-            margin-bottom: 1.4rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--navy-dark);
-        }
-
-        .form-group input, 
-        .form-group select, 
-        .form-group textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1px solid #CBD5E1;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus, 
-        .form-group select:focus, 
-        .form-group textarea:focus {
-            border-color: var(--blue-accent);
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background-color: var(--navy-main);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover {
-            background-color: var(--blue-accent);
-        }
-
-        /* Floating Kakao Button */
-        .quick-actions {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 999;
-        }
-
-        .quick-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-            transition: var(--transition);
-        }
-
-        .quick-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .btn-kakao {
-            background-color: #FEE500;
-            color: #191919;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--navy-dark);
-            color: #64748B;
-            padding: 2.5rem 1rem;
-            text-align: center;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* 헤더 & 네비게이션 */
+        header { background: #ffffff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #0056b3; }
+        .logo span { color: #28a745; }
+
+        /* 히어로 섹션 */
+        .hero { background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 40, 85, 0.85)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80') center/cover; color: white; padding: 5rem 1.5rem; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; word-break: keep-all; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #e0e0e0; word-break: keep-all; }
+        .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        
+        /* 버튼 공통 스타일 */
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 1.05rem; transition: all 0.3s; cursor: pointer; border: none; }
+        .btn-kakao { background-color: #FEE500; color: #191919; }
+        .btn-kakao:hover { background-color: #fada0a; transform: translateY(-2px); }
+        .btn-primary { background-color: #0056b3; color: white; }
+        .btn-primary:hover { background-color: #004188; transform: translateY(-2px); }
+
+        /* 메인 컨테이너 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2rem; color: #0056b3; margin-bottom: 0.5rem; }
+        .section-title p { color: #666; font-size: 1.05rem; }
+
+        /* 서비스 카드리스트 Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .service-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; }
+        .service-card .content { padding: 1.5rem; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: #222; }
+        .service-card p { color: #666; font-size: 0.95rem; }
+
+        /* 온라인 견적 문의 폼 섹션 */
+        .form-section { background: white; border-radius: 16px; padding: 3rem 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 700px; margin: 0 auto; }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; }
+        .form-group textarea { height: 120px; resize: vertical; }
+
+        /* 사업장 정보 & 푸터 */
+        footer { background: #222; color: #aaa; padding: 3rem 1.5rem; margin-top: 5rem; font-size: 0.9rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        .footer-info h3 { color: white; margin-bottom: 1rem; }
+        .footer-info p { margin-bottom: 0.4rem; }
+
+        /* 우측 하단 카카오톡 플로팅 버튼 */
+        .floating-btn { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; }
+        .btn-kakao-round { width: 60px; height: 60px; border-radius: 50%; background-color: #FEE500; color: #191919; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: transform 0.3s; }
+        .btn-kakao-round:hover { transform: scale(1.1); }
+
+        /* 반응형 모바일 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 1.8rem; }
             .hero p { font-size: 1rem; }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--navy-dark);
-                flex-direction: column;
-                padding: 1.5rem 2rem;
-                gap: 1.2rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-toggle {
-                display: block;
-            }
-
-            .highlights {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-group {
-                flex-direction: column;
-            }
+            .btn { width: 100%; justify-content: center; }
+            .form-section { padding: 2rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 상단 네비게이션 -->
+    <!-- 헤더 -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-snowflake"></i> 유진공조시스템
+            <div class="logo">유진공조<span>시스템</span></div>
+            <a href="https://open.kakao.com/o/s1234567" onclick="openKakaoDirect(event, 's1234567')" target="_blank" class="btn btn-kakao" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                <i class="fa-solid fa-comment"></i> 카카오톡 상담
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" onclick="toggleMenu()">회사소개</a></li>
-                <li><a href="#services" onclick="toggleMenu()">주요서비스</a></li>
-                <li><a href="#gallery" onclick="toggleMenu()">시공사례</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">견적문의</a></li>
-            </ul>
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
         </div>
     </header>
 
-    <!-- 메인 히어로 섹션 -->
+    <!-- 히어로 섹션 -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-tag">상가용 시스템에어컨 전문 시공 & 정밀 세척</span>
-            <h1>상가·매장 냉난방의 완벽한 솔루션<br>유진공조시스템</h1>
-            <p>식당, 카페, 오피스, 매장 전문! 상가용 시스템에어컨 맞춤 설치부터 쾌적한 고압 분해 세척까지 완벽하게 책임집니다.</p>
-            <div class="btn-group">
-                <!-- ★ TODO: 오픈채팅 URL 입력 -->
-                <a href="https://open.kakao.com/o/s2B6f2Ni" target="_blank" class="btn btn-kakao-hero"><i class="fa-solid fa-comment"></i> 카카오톡 즉시 상담</a>
-                <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> 온라인 견적 신청</a>
-            </div>
+        <h1>상가·매장용 시스템에어컨 전문<br>설치 & 완전분해 고압세척</h1>
+        <p>시흥 / 배곧 / 안산 / 인천 맞춤 시공 및 쾌적한 실내공기 솔루션</p>
+        <div class="btn-group">
+            <a href="https://open.kakao.com/o/s1234567" onclick="openKakaoDirect(event, 's1234567')" target="_blank" class="btn btn-kakao">
+                <i class="fa-solid fa-comment"></i> 카카오톡 즉시 상담하기
+            </a>
+            <a href="#estimate-form" class="btn btn-primary">
+                <i class="fa-regular fa-paper-plane"></i> 온라인 견적 문의
+            </a>
         </div>
     </section>
 
-    <!-- 회사 소개 -->
-    <section id="about">
-        <div class="section-header">
-            <h2>ABOUT US</h2>
-            <p>상가 공간에 최적화된 시스템에어컨 설치 및 정밀 세척 관리 전문 기업</p>
+    <!-- 주력 서비스 섹션 -->
+    <main class="container">
+        <div class="section-title">
+            <h2>주요 서비스 안내</h2>
+            <p>유진공조시스템의 전문 기술력으로 안전하고 완벽하게 시공합니다.</p>
         </div>
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=800&q=80" alt="유진공조시스템 세척 및 시공 현장">
-            </div>
-            <div class="about-text">
-                <h3>상가 매장의 환경을 고려한 시스템에어컨 맞춤 시공 & 정밀 케어</h3>
-                <p>유진공조시스템은 상가, 매장, 식당, 사무실 등 상업 공간의 시스템에어컨에 특화된 전문 솔루션을 제공합니다.</p>
-                <p>영업 환경에 최적화된 시스템에어컨 설계 및 전문 설치는 물론, 내부 곰팡이와 이물질을 완벽히 제거하는 고압 완전 분해 세척 및 덕트 연계 시공을 통해 쾌적한 실내 공기와 뛰어난 에너지 절감 효과를 약속드립니다.</p>
-                <div class="highlights">
-                    <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> 상가용 시스템에어컨 맞춤 설계·시공</div>
-                    <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> 시스템에어컨 정밀 고압 분해 세척</div>
-                    <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> 매장 환기 및 덕트 설비 연계</div>
-                    <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> 철저하고 책임감 있는 사후관리</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 주요 서비스 -->
-    <div class="services-wrapper">
-        <section id="services">
-            <div class="section-header">
-                <h2>OUR SERVICES</h2>
-                <p>유진공조시스템의 상가용 시스템에어컨 주력 서비스입니다.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-store"></i></div>
-                    <h3>상가용 시스템에어컨 설치</h3>
-                    <p>식당, 카페, 사무실 등 상가 매장 특성에 맞춰 천장형 4WAY, 1WAY, 대형 냉난방기 등의 최적 배관 및 정교한 설치를 진행합니다.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-pump-soap"></i></div>
-                    <h3>시스템에어컨 고압 분해 세척</h3>
-                    <p>상가 에어컨 내부에 쌓인 기름때, 먼지, 곰팡이를 전용 약품과 고압 세척기로 완벽 제거하여 냉난방 효율 증대와 전기료 절감을 선사합니다.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-wind"></i></div>
-                    <h3>덕트 시공 및 유지보수</h3>
-                    <p>주방 배기 덕트, 실내 환기 덕트 라인 설계 및 공사와 함께 지속적인 점검·유지보수로 쾌적한 상가 영업 환경을 유지해 드립니다.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="상가 에어컨 설치">
+                <div class="content">
+                    <h3>상가용 시스템에어컨 설치 & 교체</h3>
+                    <p>매장, 식당, 카페, 사무실 등 공간 구조에 맞는 신규 시공 및 노후 장비 교체 전문</p>
                 </div>
             </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" alt="에어컨 고압 분해 세척">
+                <div class="content">
+                    <h3>시스템에어컨 고압 완전분해 세척</h3>
+                    <p>부품 완전 분해 후 핀세정제 및 고압 세척기로 냉난방 효율 향상 및 악취 완벽 제거</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="덕트 환기 공사">
+                <div class="content">
+                    <h3>덕트 & 환기 설비 공사</h3>
+                    <p>상가 매장 유기적 환기 및 공기순환 시스템 맞춤 설계 및 덕트 배관 공사</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 온라인 견적 문의 폼 -->
+        <section id="estimate-form" class="form-section">
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h2>온라인 견적 문의</h2>
+                <p>문의내용을 남겨주시면 확인 후 빠르게 안내해 드립니다.</p>
+            </div>
+
+            <!-- Formspree 연동 폼 -->
+            <action action="https://formspree.io/f/xvovgepq" method="POST">
+                <div class="form-group">
+                    <label for="name">성함 / 업체명</label>
+                    <input type="text" id="name" name="성함_업체명" placeholder="예: 홍길동 (유진식당)" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" name="연락처" placeholder="010-0000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">문의 서비스 구분</label>
+                    <select id="service" name="문의서비스">
+                        <option value="상가 에어컨 신규 설치/교체">상가 에어컨 신규 설치/교체</option>
+                        <option value="에어컨 고압 완전분해 세척">에어컨 고압 완전분해 세척</option>
+                        <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
+                        <option value="기타 문의">기타 문의</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">상세 문의 내용 (지역, 평수, 천장 구조 등)</label>
+                    <textarea id="message" name="상세문의내용" placeholder="예: 시흥 배곧 30평 식당 시스템에어컨 4way 2대 완전분해세척 견적 문의드립니다." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem;">
+                    <i class="fa-solid fa-paper-plane"></i> 견적 문의 보내기
+                </button>
+            </form>
         </section>
-    </div>
+    </main>
 
-    <!-- 시공 사례 갤러리 -->
-    <section id="gallery">
-        <div class="section-header">
-            <h2>PORTFOLIO</h2>
-            <p>유진공조시스템의 실제 상가 시스템에어컨 설치 및 세척 현장 사례입니다.</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1590247819200-07204f14a60b?auto=format&fit=crop&w=600&q=80" alt="상가 천장형 에어컨 설치">
-                <div class="gallery-overlay">
-                    <h4>대형 매장 시스템에어컨 설치</h4>
-                    <p>상가 천장형 4WAY 냉난방기 설치 완료</p>
-                </div>
+    <!-- 푸터 & 사업장 정보 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>유진공조시스템</h3>
+                <p><strong>대표자:</strong> 대표</p>
+                <p><strong>주소:</strong> 경기도 시흥시 배곧4로 32-19 110호</p>
+                <p><strong>주요업무:</strong> 상가용 시스템에어컨 설치, 고압 완전분해 세척, 덕트 공사</p>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="에어컨 고압 분해 세척">
-                <div class="gallery-overlay">
-                    <h4>카페 천장형 에어컨 고압 세척</h4>
-                    <p>열교환기 핀 및 드레인판 분해 세척</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="식당 덕트 공사">
-                <div class="gallery-overlay">
-                    <h4>음식점 주방 환기 덕트 시공</h4>
-                    <p>배기 덕트 라인 신설 및 팬 교체</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="사무실 에어컨 세척 관리">
-                <div class="gallery-overlay">
-                    <h4>오피스 상가 종합 세척 관리</h4>
-                    <p>정기 종합 분해 세척 및 냉매 점검</p>
-                </div>
+            <div>
+                <p>© 2026 유진공조시스템. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- 온라인 견적 문의 -->
-    <section id="contact">
-        <div class="section-header">
-            <h2>CONTACT US</h2>
-            <p>상가 시스템에어컨 신규 설치, 교체, 세척 문의를 남겨주시면 신속하게 답변해 드립니다.</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div>
-                    <h3>유진공조시스템 정보</h3>
-                    <p class="desc">온라인 문의 및 카카오톡 오픈채팅 상담을 통해 편하게 문의주세요.</p>
-                </div>
-                <div class="info-details">
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <strong>대표 문의전화</strong>
-                            <p>010-2035-3667</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>사업장 위치</strong>
-                            <p>경기도 시흥시 배곧4로 32-19 110호</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <div>
-                            <strong>상담 가능 시간</strong>
-                            <p>평일 08:00 - 18:00 (토/일 예약 상담)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <!-- ★ TODO: 아래 action URL의 YOUR_FORMSPREE_ID를 본인의 Formspree ID로 변경하세요. -->
-                <form id="quoteForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">성함 / 상가 매장명</label>
-                        <input type="text" id="name" name="성함 및 매장명" placeholder="예: 홍길동 (OO 카페)" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">연락처</label>
-                        <input type="tel" id="phone" name="연락처" placeholder="010-0000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service_type">문의 유형</label>
-                        <select id="service_type" name="문의 유형" required>
-                            <option value="">선택해 주세요</option>
-                            <option value="상가용 시스템에어컨 설치/교체">상가용 시스템에어컨 설치 / 교체</option>
-                            <option value="상가 시스템에어컨 고압 분해 세척">상가 시스템에어컨 고압 분해 세척</option>
-                            <option value="덕트 및 환기 공사">덕트 및 환기 공사</option>
-                            <option value="정기 종합 점검 및 세척">정기 종합 점검 및 세척</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">문의 내용 (매장 종류, 평수, 에어컨 대수 등)</label>
-                        <textarea id="message" name="문의 내용" rows="4" placeholder="예: 30평 식당 천장형 시스템에어컨 2대 분해 세척 견적 문의드립니다."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> 견적 신청하기</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- 플로팅 카카오톡 상담 버튼 -->
-    <div class="quick-actions">
-        <!-- ★ TODO: 오픈채팅 URL 입력 -->
-        <a href="https://open.kakao.com/o/s2B6f2Ni" target="_blank" class="quick-btn btn-kakao" title="카카오톡 1:1 상담">
+    <!-- 우측 하단 카카오톡 플로팅 버튼 -->
+    <div class="floating-btn">
+        <a href="https://open.kakao.com/o/s1234567" onclick="openKakaoDirect(event, 's1234567')" target="_blank" class="btn-kakao-round" title="카카오톡 1:1 상담">
             <i class="fa-solid fa-comment"></i>
         </a>
     </div>
 
-    <!-- 푸터 -->
-    <footer>
-        <p>&copy; 2026 유진공조시스템. All Rights Reserved. | 주소: 경기도 시흥시 배곧4로 32-19 110호 | 대표전화: 010-2035-3667</p>
-    </footer>
-
-    <!-- 스크립트 -->
+    <!-- 카카오톡 앱 즉시 연결 자바스크립트 -->
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
+        function openKakaoDirect(event, chatId) {
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        // Formspree 비동기(AJAX) 전송 처리
-        async function handleFormSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const submitBtn = document.getElementById('submitBtn');
-            const data = new FormData(form);
+            if (isMobile) {
+                event.preventDefault();
+                const kakaoAppUrl = `kakaolink://openlink?id=${chatId}`;
+                const webUrl = `https://open.kakao.com/o/${chatId}`;
 
-            submitBtn.disabled = true;
-            submitBtn.innerText = "전송 중...";
+                window.location.href = kakaoAppUrl;
 
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    alert("견적 문의가 성공적으로 접수되었습니다!\n확인 후 작성해주신 연락처로 신속히 답변드리겠습니다.");
-                    form.reset();
-                } else {
-                    alert("전송 중 오류가 발생했습니다. 우측 하단의 카카오톡 상담을 이용해주세요.");
-                }
-            } catch (error) {
-                alert("전송 중 오류가 발생했습니다. 우측 하단의 카카오톡 상담을 이용해주세요.");
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 견적 신청하기';
+                setTimeout(() => {
+                    window.location.href = webUrl;
+                }, 500);
             }
         }
     </script>
